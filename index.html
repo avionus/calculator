@@ -5,10 +5,27 @@
 </head>
 <body>
 	<h1> Calculator </h1>
-	<div id="display"></div>
-	<button id="seven" value="7"> 7 </button>
-	<button id="eight" value="8"> 8 </button>
-	<button id="nine" value="9"> 9 </button>
+	<div id="display">
+		<input id="numberScreen" type="text" value="123456">
+	</div>
+	<div id="buttons">
+		<button id="seven"> 7 </button>
+		<button id="eight"> 8 </button>
+		<button id="nine"> 9 </button> 
+		<button id="addition"> + </button> <br>
+		<button id="four"> 4 </button>
+		<button id="five"> 5 </button>
+		<button id="six"> 6 </button> 
+		<button id="subtraction"> - </button><br>
+		<button id="one"> 1 </button>
+		<button id="two"> 2 </button>
+		<button id="three"> 3 </button>
+		<button id="multiplication"> x </button><br>
+		<button id="clear"> Clear </button>
+		<button id="zero"> 0 </button>
+		<button id="equals"> = </button>
+		<button id="division"> ÷ </button>
+	</div>
 	<script type="text/javascript">
 		function addition(){
 			let sum = arguments[0]+ arguments[1];
@@ -26,17 +43,44 @@
 			let quotient = arguments[0] / arguments[1];
 			return quotient;
 		}
-		function operate(operator, numberOne, numberTwo){
+		function operate(numberOne, operator, numberTwo){
 			if (operator == "+"){
-				addition(numberOne, numberTwo);
+				numberScreen.value = (addition(numberOne, numberTwo));
 			}else if (operator == "-"){
-				subtraction(numberOne, numberTwo);
+				numberScreen.value = (subtraction(numberOne, numberTwo));
 			} else if ( operator == "*"){
-				multiplication(numberOne, numberTwo);
+				numberScreen.value = (multiplication(numberOne, numberTwo));
 			}else{
-				division(numberOne, numberTwo);
+				numberScreen.value = (division(numberOne, numberTwo));
 			}
 		}
+		const buttonOne = document.getElementById('one');
+		const buttonTwo = document.getElementById('two');
+		const buttontThree = document.getElementById('three');
+		const buttonFour = document.getElementById('four');
+		const buttonFive = document.getElementById('five');
+		const buttonSix = document.getElementById('six');
+		const buttonSeven = document.getElementById('seven');
+		const buttonEight = document.getElementById('eight');
+		const buttonNine = document.getElementById('nine');
+		const buttonZero = document.getElementById('zero');
+		const clear = document.getElementById('clear');
+		const numberScreen = document.getElementById('numberScreen');
+		const display = document.getElementById('display')
+		const equals = document.getElementById('equals');
+		const one = 1;
+
+
+		clear.addEventListener('click', ()=> {
+			numberScreen.value = 0;
+		})
+		equals.addEventListener('click', ()=>{
+			var splitMeUp = numberScreen.value;
+			var beenSplit = splitMeUp.split(" ");
+			operate(Number(beenSplit[0]), beenSplit[1], Number(beenSplit[2]))
+		})
+
+
 	</script>
 </body>
 </html>
