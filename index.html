@@ -6,24 +6,21 @@
 <body>
 	<script type="text/javascript">
 		function addition(){
-			let sum = 0;
-			for (var i = 0; i < arguments.length; i++) {
-				sum += arguments[i];
-			} return(sum);
+			let sum = arguments[0]+ arguments[1];
+			return sum;
 		}
 		function subtraction(){
-			let sum = 0;
-			for (var i = 0; i < arguments.length; i++) {
-				sum -= arguments[i];
-			} console.log(sum);
+			let difference = arguments[0] - arguments[1];
+			return difference;
 		}
 		function multiplication(){
-			
+			let product = arguments[0] * arguments[1];
+			return product;
 		}
 		function division(){
-			
+			let quotient = arguments[0] / arguments[1];
 		}
-		subtraction(1, 2, 3, 4, 5);
+		subtraction(16, 2, 4);
 	</script>
 </body>
 </html>
