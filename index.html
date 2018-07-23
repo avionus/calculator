@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="calculator.css">
 </head>
 <body>
 	<h1> Calculator </h1>
 	<div id="display">
-		<input id="numberScreen" type="text" value="123456">
 	</div>
 	<div id="buttons">
 		<button id="seven"> 7 </button>
@@ -28,30 +28,31 @@
 	</div>
 	<script type="text/javascript">
 		function addition(){
-			let sum = arguments[0]+ arguments[1];
-			return sum;
+			let sum = document.createElement('h4');
+			sum.textContent = `${arguments[0]+ arguments[1]}`;
+			display.appendChild(sum);
 		}
 		function subtraction(){
 			let difference = arguments[0] - arguments[1];
-			return difference;
+			display.appendChild(difference);
 		}
 		function multiplication(){
 			let product = arguments[0] * arguments[1];
-			return product;
+			display.appendChild(product);
 		}
 		function division(){
 			let quotient = arguments[0] / arguments[1];
-			return quotient;
+			display.appendChild(quotient);
 		}
 		function operate(numberOne, operator, numberTwo){
 			if (operator == "+"){
-				numberScreen.value = (addition(numberOne, numberTwo));
+				addition(numberOne, numberTwo);
 			}else if (operator == "-"){
-				numberScreen.value = (subtraction(numberOne, numberTwo));
+				subtraction(numberOne, numberTwo);
 			} else if ( operator == "*"){
-				numberScreen.value = (multiplication(numberOne, numberTwo));
+				multiplication(numberOne, numberTwo);
 			}else{
-				numberScreen.value = (division(numberOne, numberTwo));
+				division(numberOne, numberTwo);
 			}
 		}
 		const buttonOne = document.getElementById('one');
@@ -68,15 +69,30 @@
 		const numberScreen = document.getElementById('numberScreen');
 		const display = document.getElementById('display')
 		const equals = document.getElementById('equals');
-		const one = 1;
+		const buttonAddition = document.getElementById('addition');
 
+		buttonOne.addEventListener('click', () =>{
+			display.insertAdjacentHTML('beforeend', '<p>1</p>');
+		})
 
+		buttonTwo.addEventListener('click', () =>{
+			display.insertAdjacentHTML('beforeend', '<p>2</p>');
+		})
+		buttonAddition.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p> + </p>')
+		})
 		clear.addEventListener('click', ()=> {
-			numberScreen.value = 0;
+			window.location.reload();
 		})
 		equals.addEventListener('click', ()=>{
-			var splitMeUp = numberScreen.value;
+			var equationArray =[];
+			var nodeArray = Array.from(display.querySelectorAll('p'));
+			for (var i = 0; i < nodeArray.length; i++) {
+				equationArray.push(nodeArray[i].innerText)
+			}
+			var splitMeUp = equationArray.join("");
 			var beenSplit = splitMeUp.split(" ");
+			console.log(beenSplit);
 			operate(Number(beenSplit[0]), beenSplit[1], Number(beenSplit[2]))
 		})
 
