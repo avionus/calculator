@@ -4,6 +4,11 @@
 	<title></title>
 </head>
 <body>
+	<h1> Calculator </h1>
+	<div id="display"></div>
+	<button id="seven" value="7"> 7 </button>
+	<button id="eight" value="8"> 8 </button>
+	<button id="nine" value="9"> 9 </button>
 	<script type="text/javascript">
 		function addition(){
 			let sum = arguments[0]+ arguments[1];
@@ -19,8 +24,19 @@
 		}
 		function division(){
 			let quotient = arguments[0] / arguments[1];
+			return quotient;
 		}
-		subtraction(16, 2, 4);
+		function operate(operator, numberOne, numberTwo){
+			if (operator == "+"){
+				addition(numberOne, numberTwo);
+			}else if (operator == "-"){
+				subtraction(numberOne, numberTwo);
+			} else if ( operator == "*"){
+				multiplication(numberOne, numberTwo);
+			}else{
+				division(numberOne, numberTwo);
+			}
+		}
 	</script>
 </body>
 </html>
