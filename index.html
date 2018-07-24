@@ -29,19 +29,22 @@
 	<script type="text/javascript">
 		function addition(){
 			let sum = document.createElement('h4');
-			sum.textContent = `${arguments[0]+ arguments[1]}`;
+			sum.textContent = `Answer: ${arguments[0]+ arguments[1]}`;
 			display.appendChild(sum);
 		}
 		function subtraction(){
-			let difference = arguments[0] - arguments[1];
+			let difference = document.createElement('h4');
+			difference.textContent = `Answer: ${arguments[0] - arguments[1]}`;
 			display.appendChild(difference);
 		}
 		function multiplication(){
-			let product = arguments[0] * arguments[1];
+			let product = document.createElement('h4');
+			product.textContent = `Answer: ${arguments[0] * arguments[1]}`;
 			display.appendChild(product);
 		}
 		function division(){
-			let quotient = arguments[0] / arguments[1];
+			let quotient = document.createElement('h4');
+			quotient.textContent = `Answer: ${arguments[0] / arguments[1]}`;
 			display.appendChild(quotient);
 		}
 		function operate(numberOne, operator, numberTwo){
@@ -52,7 +55,14 @@
 			} else if ( operator == "*"){
 				multiplication(numberOne, numberTwo);
 			}else{
-				division(numberOne, numberTwo);
+				if(numberOne == 0){
+					alert("You can't divide by zero what are you doing?!");
+				}else if (numberTwo == 0){
+					alert("You can't divide by zero what are you doing?!");
+				} else{
+					division(numberOne, numberTwo);
+				}
+				
 			}
 		}
 		const buttonOne = document.getElementById('one');
@@ -70,16 +80,51 @@
 		const display = document.getElementById('display')
 		const equals = document.getElementById('equals');
 		const buttonAddition = document.getElementById('addition');
+		const buttonSubtraction = document.getElementById('subtraction');
+		const buttonDivision = document.getElementById('division');
+		const buttonMultiplication = document.getElementById('multiplication');
 
-		buttonOne.addEventListener('click', () =>{
+		buttonOne.addEventListener('click', ()=>{
 			display.insertAdjacentHTML('beforeend', '<p>1</p>');
 		})
-
-		buttonTwo.addEventListener('click', () =>{
+		buttonTwo.addEventListener('click', ()=>{
 			display.insertAdjacentHTML('beforeend', '<p>2</p>');
+		})
+		buttontThree.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p>3</p>')
+		})
+		buttonFour.addEventListener('click', ()=> {
+			display.insertAdjacentHTML('beforeend', '<p>4</p>')
+		})
+		buttonFive.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p>5</p>')
+		})
+		buttonSix.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p>6</p>')
+		})
+		buttonSeven.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p>7</p>')
+		})
+		buttonEight.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p>8</p>')
+		})
+		buttonNine.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p>9</p>')
+		})
+		buttonZero.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p>0</p>')
 		})
 		buttonAddition.addEventListener('click', ()=>{
 			display.insertAdjacentHTML('beforeend', '<p> + </p>')
+		})
+		buttonSubtraction.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p> - </p>')
+		})
+		buttonMultiplication.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p> * </p>')
+		})
+		buttonDivision.addEventListener('click', ()=>{
+			display.insertAdjacentHTML('beforeend', '<p> / </p>')
 		})
 		clear.addEventListener('click', ()=> {
 			window.location.reload();
