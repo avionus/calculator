@@ -24,45 +24,86 @@
 		<button id="clear"> Clear </button>
 		<button id="zero"> 0 </button>
 		<button id="equals"> = </button>
-		<button id="division"> ÷ </button>
+		<button id="division"> ÷ </button><br>
 	</div>
 	<script type="text/javascript">
+		
 		function addition(){
-			let sum = document.createElement('h4');
-			sum.textContent = `Answer: ${arguments[0]+ arguments[1]}`;
-			display.appendChild(sum);
+			let sum = Number(arguments[0])+ Number(arguments[1]);
+			return sum;
 		}
 		function subtraction(){
-			let difference = document.createElement('h4');
-			difference.textContent = `Answer: ${arguments[0] - arguments[1]}`;
-			display.appendChild(difference);
+			let difference = arguments[0] - arguments[1];
+			return difference
 		}
 		function multiplication(){
-			let product = document.createElement('h4');
-			product.textContent = `Answer: ${arguments[0] * arguments[1]}`;
-			display.appendChild(product);
+			let product = arguments[0] * arguments[1];
+			return product;
 		}
 		function division(){
-			let quotient = document.createElement('h4');
-			quotient.textContent = `Answer: ${arguments[0] / arguments[1]}`;
-			display.appendChild(quotient);
+			let quotient = arguments[0] / arguments[1];
+			return quotient
 		}
-		function operate(numberOne, operator, numberTwo){
-			if (operator == "+"){
-				addition(numberOne, numberTwo);
-			}else if (operator == "-"){
-				subtraction(numberOne, numberTwo);
-			} else if ( operator == "*"){
-				multiplication(numberOne, numberTwo);
-			}else{
-				if(numberOne == 0){
-					alert("You can't divide by zero what are you doing?!");
-				}else if (numberTwo == 0){
-					alert("You can't divide by zero what are you doing?!");
-				} else{
-					division(numberOne, numberTwo);
+		function operate(array){
+			if (array.length == 3){
+				if (array[1] == "+"){
+					let answerOne = addition(array[0], array[2]);
+					let answer = document.createElement('h4');
+					answer.textContent = `Answer: ${answerOne}`;
+					display.appendChild(answer);
+				}else if (array[1] == "-"){
+					let answerTwo = subtraction(array[0], array[2]);
+					let answer = document.createElement('h4');
+					answer.textContent = `Answer: ${answerTwo}`;
+					display.appendChild(answer);
+				} else if (array[1] == "*"){
+					let answerThree = multiplication(array[0], array[2]);
+					let answer = document.createElement('h4');
+					answer.textContent = `Answer: ${answerThree}`;
+					display.appendChild(answer);
+				}else if(array[1] == "/"){
+					if(array[0] == 0){
+						alert("Beep Boop! You can't divide by zero!");
+					}else if (array[2] == 0){
+						alert("Beep Boop! You can't divide by zero!");
+					} else{
+						let answerFour = division(array[0], array[2]);
+						let answer = document.createElement('h4');
+						answer.textContent = `Answer: ${answerFour}`;
+						display.appendChild(answer);
+					}
 				}
-				
+			} else if(array.length ==5){
+				if(array[1] == "*"){
+					let shark = multiplication(array[0], array[2]);
+					if(array[3] == "+"){
+						let seal = addition(shark, array[4]);
+						let answer = document.createElement('h4');
+						answer.textContent = `Answer: ${seal}`;
+						display.appendChild(answer);
+					}else if (array[3] == "-"){
+						let octopus = subtraction(shark, array[4]);
+						let answer = document.createElement('h4');
+						answer.textContent = `Answer: ${octopus}`;
+						display.appendChild(answer);
+					}else if(array[3] == "*"){
+						let eel = multiplication(shark, array[4]);
+						let answer = document.createElement('h4');
+						answer.textContent = `Answer: ${eel}`;
+						display.appendChild(answer);
+					}else {
+						if(array[0] == 0){
+							alert("Beep Boop! You can't divide by zero!");
+						}else if (array[2] == 0){
+							alert("Beep Boop! You can't divide by zero!");
+						} else{
+							let flounder = division(shark, array[4]);
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${flounder}`;
+							display.appendChild(answer);
+						}
+					}
+				}
 			}
 		}
 		const buttonOne = document.getElementById('one');
@@ -83,7 +124,7 @@
 		const buttonSubtraction = document.getElementById('subtraction');
 		const buttonDivision = document.getElementById('division');
 		const buttonMultiplication = document.getElementById('multiplication');
-
+		
 		buttonOne.addEventListener('click', ()=>{
 			display.insertAdjacentHTML('beforeend', '<p>1</p>');
 		})
@@ -129,19 +170,16 @@
 		clear.addEventListener('click', ()=> {
 			window.location.reload();
 		})
-		equals.addEventListener('click', ()=>{
+		equals.addEventListener('click', ()=> {
 			var equationArray =[];
 			var nodeArray = Array.from(display.querySelectorAll('p'));
 			for (var i = 0; i < nodeArray.length; i++) {
-				equationArray.push(nodeArray[i].innerText)
-			}
+				equationArray.push(nodeArray[i].innerText);
+			};
 			var splitMeUp = equationArray.join("");
 			var beenSplit = splitMeUp.split(" ");
-			console.log(beenSplit);
-			operate(Number(beenSplit[0]), beenSplit[1], Number(beenSplit[2]))
+			operate(beenSplit);
 		})
-
-
 	</script>
 </body>
 </html>
