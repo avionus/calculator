@@ -45,538 +45,1890 @@
 			return quotient
 		}
 		function operate(array){
-			if (array.length == 3){
-				if (array[1] == "+"){
-					let answerOne = addition(array[0], array[2]);
-					let answer = document.createElement('h4');
-					answer.textContent = `Answer: ${answerOne}`;
-					display.appendChild(answer);
-				}else if (array[1] == "-"){
-					let answerTwo = subtraction(array[0], array[2]);
-					let answer = document.createElement('h4');
-					answer.textContent = `Answer: ${answerTwo}`;
-					display.appendChild(answer);
-				} else if (array[1] == "*"){
-					let answerThree = multiplication(array[0], array[2]);
-					let answer = document.createElement('h4');
-					answer.textContent = `Answer: ${answerThree}`;
-					display.appendChild(answer);
-				}else if(array[1] == "/"){
-					if(array[0] == 0){
-						alert("Beep Boop! You can't divide by zero!");
-					}else if (array[2] == 0){
-						alert("Beep Boop! You can't divide by zero!");
-					} else{
-						let answerFour = division(array[0], array[2]);
+			if(array.length >=3 && array.length<=9){
+				if(array[1] =="+"){
+					let apple = addition(array[0], array[2]);
+					if(array[3] == undefined){
 						let answer = document.createElement('h4');
-						answer.textContent = `Answer: ${answerFour}`;
+						answer.textContent = `Answer: ${apple}`;
 						display.appendChild(answer);
-					}
-				}
-			} else if(array.length ==5){
-				if(array[1] == "*"){
-					let shark = multiplication(array[0], array[2]);
-					if(array[3] == "+"){
-						let seal = addition(shark, array[4]);
-						let answer = document.createElement('h4');
-						answer.textContent = `Answer: ${seal}`;
-						display.appendChild(answer);
-					}else if (array[3] == "-"){
-						let octopus = subtraction(shark, array[4]);
-						let answer = document.createElement('h4');
-						answer.textContent = `Answer: ${octopus}`;
-						display.appendChild(answer);
-					}else if(array[3] == "*"){
-						let eel = multiplication(shark, array[4]);
-						let answer = document.createElement('h4');
-						answer.textContent = `Answer: ${eel}`;
-						display.appendChild(answer);
-					}else {
-						if(array[4] == 0){
-							alert("Beep Boop! You can't divide by zero!");
-						} else{
-							let flounder = division(shark, array[4]);
+					}else if(array[3] == "+"){
+						//add add
+						let orange = addition(apple, array[4]);
+							if(array[5] ==undefined){
 							let answer = document.createElement('h4');
-							answer.textContent = `Answer: ${flounder}`;
+							answer.textContent = `Answer: ${orange}`;
 							display.appendChild(answer);
-						}
-					}
-					} else if (array[1] == "/"){
-						if(array[0] == 0){
-							alert("Beep Boop! You can't divide by zero!");
-						}else if (array[2] == 0){
-							alert("Beep Boop! You can't divide by zero!");
-						} else{
-							let tiger = division(array[0], array[2]);
-							if(array[3] == "+"){
-								let deer = addition(tiger, array[4]);
-								let answer = document.createElement('h4');
-								answer.textContent = `Answer: ${deer}`;
-								display.appendChild(answer);
-							}else if(array[3] == "-"){
-								let okapi = addition(tiger, array[4]);
-								let answer = document.createElement('h4');
-								answer.textContent = `Answer: ${okapi}`;
-								display.appendChild(answer);
-							} else if(array[3] == "*"){
-								let capuchin = addition(tiger, array[4]);
-								let answer = document.createElement('h4');
-								answer.textContent = `Answer: ${capuchin}`;
-								display.appendChild(answer);
-							} else{
-								if(array[4] == 0){
-								alert("Beep Boop! You can't divide by zero!");
+							}else if(array[5] =="+"){
+								//add add add
+								let banana = addition(orange, array[6]);
+								if(array[7]==undefined){
+									//add add add add
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${banana}`;
+									display.appendChild(answer);
+								}else if(array[7]=="+"){
+									let cherry = addition(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let cherry = subtraction(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let peach = multiplication(array[6], array[8]);
+									let kumquat = addition(orange, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}else if(array[7]=="/"){
+									if(array[6] == 0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8] ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let peach = division(array[6], array[8]);
+										let kumquat = addition(orange, peach);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${kumquat}`;
+										display.appendChild(answer);
+									}
+								}
+								//add add subtract
+							}else if(array[5]=="-"){
+								let banana = subtraction(orange, array[6]);
+								if(array[7]==undefined){
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${banana}`;
+									display.appendChild(answer);
+									//add add subtract add
+								}else if(array[7]=="+"){
+									let cherry = addition(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let cherry = subtraction(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let peach = multiplication(array[6], array[8]);
+									let kumquat = addition(orange, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
 								}else{
-								let sloth = division(tiger, array[4]);
-								let answer = document.createElement('h4');
-								answer.textContent = `Answer: ${sloth}`;
-								display.appendChild(answer);
+									if(array[6] == 0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8] ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let peach = division(array[6], array[8]);
+										let kumquat = addition(orange,peach);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${kumquat}`;
+										display.appendChild(answer);
+									}
+								}
+								//add add multiply
+							}else if(array[5]=="*"){
+								let tomato = multiplication(array[4], array[6]);
+								let clementine = addition(apple, tomato)
+								if(array[7]==undefined){
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${clementine}`;
+									display.appendChild(answer);
+									//add add multiply add
+								}else if(array[7]=="+"){
+									let cherry = addition(clementine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let watermellon = subtraction(clementine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${watermellon}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let peach = multiplication(clementine, array[8]);
+									let kumquat = addition(apple, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}else{
+									if(clementine == 0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8] ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let plum = division(clementine, array[8]);
+										let grape = addition(plum, orange);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${grape}`;
+										display.appendChild(answer);
+									}
+								}
+							}else{
+								//add add divide
+							if(array[4] ==0){
+								alert("Beep boop! You can't divide by zero!");
+							}else if(array[6] ==0){
+								alert("Beep boop! You can't divide by zero!");
+							}else{
+								let tomato = division(array[4], array[6]);
+								let clementine = addition(apple, tomato)
+								if(array[7]==undefined){
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${clementine}`;
+									display.appendChild(answer);
+									//add add divide add
+								}else if(array[7]=="+"){
+									let cherry = addition(clementine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let watermellon = subtraction(clementine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${watermellon}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let peach = multiplication(tomato, array[8]);
+									let kumquat = addition(apple, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}else{
+									if(array[6] == 0){
+										alert("Beep boop! You can't divide by zero!")
+									}else if(array[8] ==0){
+										alert("Beep boop! You can't divide by zero!")
+									}else{
+										let plum = division(tomato, array[8]);
+										let grape = addition(plum, apple);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${grape}`;
+										display.appendChild(answer);
+									}
 								}
 							}
 						}
-					} else if (array[1] == "+"){
-						if(array[3] == "*"){
-							let swan = multiplication(array[2], array[4]);
-							let algae = addition(swan, array[0]);
+						//add subtract
+					}else if(array[3] =="-"){
+						let orange = subtraction(apple, array[4]);
+							if(array[5] ==undefined){
 							let answer = document.createElement('h4');
-							answer.textContent = `Answer: ${algae}`;
+							answer.textContent = `Answer: ${orange}`;
 							display.appendChild(answer);
-						} else if (array[3] == "/"){
-							if(array[4] == 0){
-								alert("Beep Boop! You can't divide by zero!");
+							}else if(array[5] =="+"){
+								//add subtract add
+								let banana = addition(orange, array[6]);
+								if(array[7]==undefined){
+									//add subtract add add
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${banana}`;
+									display.appendChild(answer);
+								}else if(array[7]=="+"){
+									let cherry = addition(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let cherry = subtraction(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let peach = multiplication(array[6], array[8]);
+									let kumquat = addition(orange, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}else if(array[7]=="/"){
+									if(array[6] == 0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8] ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let peach = division(array[6], array[8]);
+										let kumquat = addition(orange, peach);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${kumquat}`;
+										display.appendChild(answer);
+									}
+								}
+								//add subtract subtract
+							}else if(array[5]=="-"){
+								let banana = subtraction(orange, array[6]);
+								if(array[7]==undefined){
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${banana}`;
+									display.appendChild(answer);
+									//add subtract subtract add
+								}else if(array[7]=="+"){
+									let cherry = addition(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let cherry = subtraction(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let peach = multiplication(array[6], array[8]);
+									let kumquat = addition(orange, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}else{
+									if(array[6] == 0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8] ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let peach = division(array[6], array[8]);
+										let kumquat = addition(orange,peach);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${kumquat}`;
+										display.appendChild(answer);
+									}
+								}
+								//add subtract multiply
+							}else if(array[5]=="*"){
+								let tomato = multiplication(array[4], array[6]);
+								let clementine = subtraction(apple, tomato)
+								if(array[7]==undefined){
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${clementine}`;
+									display.appendChild(answer);
+									//add add multiply add
+								}else if(array[7]=="+"){
+									let cherry = addition(clementine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let watermellon = subtraction(clementine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${watermellon}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let peach = multiplication(clementine, array[8]);
+									let kumquat = addition(apple, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}else{
+									if(clementine == 0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8] ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let plum = division(clementine, array[8]);
+										let grape = addition(plum, orange);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${grape}`;
+										display.appendChild(answer);
+									}
+								}
 							}else{
-								let doe = division(array[2], array[4]);
-								let wildflowers = addition(doe, array[0]);
-								let answer = document.createElement('h4');
-								answer.textContent = `Answer: ${wildflowers}`;
-								display.appendChild(answer);
-							}
-						}else if(array[3] =="+"){
-							let gorilla = addition(array[0], array[2]);
-							let berries = addition(gorilla, array[4]);
-							let answer = document.createElement('h4');
-							answer.textContent = `Answer: ${berries}`;
-							display.appendChild(answer);
-						} else{
-							let koala = addition(array[0], array[2]);
-							let eucalyptus = subtraction(koala, array[4]);
-							let answer = document.createElement('h4');
-							answer.textContent = `Answer: ${eucalyptus}`;
-							display.appendChild(answer);
-						}
-					}else if (array[1] == "-"){
-						if(array[3] == "*"){
-							let caterpillar = multiplication(array[2], array[4]);
-							let leaf = subtraction(caterpillar, array[0]);
-							let answer = document.createElement('h4');
-							answer.textContent = `Answer: ${leaf}`;
-							display.appendChild(answer);
-						} else if (array[3] == "/"){
-							if(array[4] == 0){
-								alert("Beep Boop! You can't divide by zero!");
+								//add subtract divide
+							if(array[4] ==0){
+								alert("Beep boop! You can't divide by zero!");
+							}else if(array[6] ==0){
+								alert("Beep boop! You can't divide by zero!");
 							}else{
-								let horse = division(array[2], array[4]);
-								let hay = subtraction(horse, array[0]);
-								let answer = document.createElement('h4');
-								answer.textContent = `Answer: ${hay}`;
-								display.appendChild(answer);
+								let tomato = division(array[4], array[6]);
+								let clementine = subtraction(apple, tomato)
+								if(array[7]==undefined){
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${clementine}`;
+									display.appendChild(answer);
+									//add subtract divide add
+								}else if(array[7]=="+"){
+									let cherry = addition(clementine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let watermellon = subtraction(clementine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${watermellon}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let peach = multiplication(tomato, array[8]);
+									let kumquat = addition(apple, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}else{
+									if(array[6] == 0){
+										alert("Beep boop! You can't divide by zero!")
+									}else if(array[8] ==0){
+										alert("Beep boop! You can't divide by zero!")
+									}else{
+										let plum = division(tomato, array[8]);
+										let grape = addition(plum, apple);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${grape}`;
+										display.appendChild(answer);
+									}
+								}
 							}
-						}else if(array[3] =="+"){
-							let seahorse = subtraction(array[0], array[2]);
-							let tinyfish = addition(seahorse, array[4]);
+						}
+					}else if(array[3] =="*"){
+						let pluot = multiplication(array[2], array[4]);
+						if(array[5]== undefined){
+							let mango = addition(array[0], pluot);
 							let answer = document.createElement('h4');
-							answer.textContent = `Answer: ${tinyfish}`;
+							answer.textContent = `Answer: ${mango}`;
 							display.appendChild(answer);
-						} else{
-							let ant = subtraction(array[0], array[2]);
-							let crumbs = subtraction(ant, array[4]);
-							let answer = document.createElement('h4');
-							answer.textContent = `Answer: ${crumbs}`;
-							display.appendChild(answer);
+						}else if(array[5]=="+"){
+							let mango = addition(array[0], pluot);
+							let kiwi = addition(mango, array[6]);
+							if(array[7]== undefined){
+								//add multiply add
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kiwi}`;
+								display.appendChild(answer);
+							}else if(array[7]=="+"){
+								//add multiply add add
+								let starfruit = addition(kiwi, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${starfruit}`;
+								display.appendChild(answer);
+							}else if(array[7]=="-"){
+								let starfruit = subtract(kiwi, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kiwi}`;
+								display.appendChild(answer);
+							}else if(array[7]=="*"){
+								let peach = multiplication(array[6], array[8]);
+								let mysteryFlavor = addition(pluot, peach);
+								let goji = addition(array[0], mysteryFlavor)
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${goji}`;
+								display.appendChild(answer);
+							}else if(array[7]=="/"){
+								if(array[6] ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let peach = division(array[6], array[8]);
+									let mysteryFlavor = addition(pluot, peach);
+									let goji = addition(array[0], mysteryFlavor)
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${goji}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5]=="-"){
+							let mango = addition(array[0], pluot);
+							let kiwi = subtraction(mango, array[6]);
+							if(array[7]== undefined){
+								//add multiply subtract
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kiwi}`;
+								display.appendChild(answer);
+							}else if(array[7]=="+"){
+								//add multiply subtract add
+								let starfruit = addition(kiwi, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${starfruit}`;
+								display.appendChild(answer);
+							}else if(array[7]=="-"){
+								let starfruit = subtract(kiwi, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kiwi}`;
+								display.appendChild(answer);
+							}else if(array[7]=="*"){
+								let peach = multiplication(array[6], array[8]);
+								let mysteryFlavor = subtraction(pluot, peach);
+								let goji = addition(array[0], mysteryFlavor)
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${goji}`;
+								display.appendChild(answer);
+							}else if(array[7]=="/"){
+								if(array[6] ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let peach = division(array[6], array[8]);
+									let mysteryFlavor = subtraction(puot, peach);
+									let goji = addition(array[0], mysteryFlavor)
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${goji}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5] =="*"){
+							let dragonfruit = multiplication(pluot, array[6]);
+							let nectarine = addition(dragonfruit, array[0]);
+							if(array[7]== undefined){
+								//add multiply multiply
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${nectarine}`;
+								display.appendChild(answer);
+							}else if(array[7]=="+"){
+								//add multiply multiply add
+								let starfruit = addition(nectarine, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${starfruit}`;
+								display.appendChild(answer);
+							}else if(array[7]=="-"){
+								let starfruit = subtract(nectarine, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kiwi}`;
+								display.appendChild(answer);
+							}else if(array[7]=="*"){
+								let peach = multiplication(array[6], array[8]);
+								let grapefruit = multiplication(pluot, peach);
+								let guava = addition(array[0], grapefruit);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${guava}`;
+								display.appendChild(answer);
+							}else if(array[7]=="/"){
+								let honeydew = multiplication(pluot, array[6]);
+								if(honeydew ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cantelope = division(honeydew, array[8]);
+									let blueberry = addition(cantelope, array[0]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${blueberry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5] =="/"){
+							if(pluot ==0){
+								alert("Beep boop! You can't divide by zero!");
+							}else if(array[6]==0){
+								alert("Beep boop! You can't divide by zero!");
+							}else{
+								let dragonfruit = division(pluot, array[6]);
+								let nectarine = addition(dragonfruit, array[0]);
+								if(array[7]== undefined){
+								//add multiply divide
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${nectarine}`;
+								display.appendChild(answer);
+								}else if(array[7]=="+"){
+									//add multiply divide add
+									let starfruit = addition(nectarine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${starfruit}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let starfruit = subtract(nectarine, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kiwi}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let grapefruit = multiplication(dragonfruit, array[8]);
+									let guava = addition(array[0], grapefruit);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${guava}`;
+									display.appendChild(answer);
+								}else if(array[7]=="/"){
+									if(dragonfruit ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let grapefruit = division(dragonfruit, array[8]);
+										let guava = addition(array[0], grapefruit);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${guava}`;
+										display.appendChild(answer);
+									}
+								}
+							}
+						}
+					}else if(array[3]=="/"){
+						//add divide
+						if(array[2]==0){
+							alert("Beep boop! You can't divide by zero!");
+						}else if(array[4]==0){
+							alert("Beep boop! You can't divide by zero!");
+						}else{
+							let tomato = division(array[2], array[4]);
+							let mango = addition(array[0], tomato);
+							if(array[5]== undefined){
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${mango}`;
+								display.appendChild(answer);
+							}else if(array[5]=="+"){
+									let kiwi = addition(mango, array[6]);
+								if(array[7]== undefined){
+									//add divide add
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kiwi}`;
+									display.appendChild(answer);
+								}else if(array[7]=="+"){
+									//add divide add add
+									let starfruit = addition(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${starfruit}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let starfruit = subtract(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kiwi}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let starfruit = multiplication(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${starfruit}`;
+									display.appendChild(answer);
+								}else if(array[7]=="/"){
+									if(kiwi ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let starfruit = division(kiwi, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}else if(array[5]=="-"){
+									let kiwi = subtraction(mango, array[6]);
+								if(array[7]== undefined){
+									//add divide subtract
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kiwi}`;
+									display.appendChild(answer);
+								}else if(array[7]=="+"){
+									//add divide subtract add
+									let starfruit = addition(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${starfruit}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let starfruit = subtract(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kiwi}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let starfruit = multiplication(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${starfruit}`;
+									display.appendChild(answer);
+								}else if(array[7]=="/"){
+									if(kiwi ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let starfruit = division(kiwi, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}else if(array[5] =="*"){
+								let kiwi = multiplication(mango, array[6]);
+								if(array[7]== undefined){
+									//add divide subtract
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kiwi}`;
+									display.appendChild(answer);
+								}else if(array[7]=="+"){
+									//add divide subtract add
+									let starfruit = addition(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${starfruit}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let starfruit = subtract(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kiwi}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let starfruit = multiplication(kiwi, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${starfruit}`;
+									display.appendChild(answer);
+								}else if(array[7]=="/"){
+									if(kiwi ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let starfruit = division(kiwi, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}else if(array[5] =="/"){
+								if(mango ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[6]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let kiwi = subtraction(mango, array[6]);
+									if(array[7]== undefined){
+										//add divide subtract
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${kiwi}`;
+										display.appendChild(answer);
+									}else if(array[7]=="+"){
+										//add divide subtract add
+										let starfruit = addition(kiwi, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${starfruit}`;
+										display.appendChild(answer);
+									}else if(array[7]=="-"){
+										let starfruit = subtract(kiwi, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${kiwi}`;
+										display.appendChild(answer);
+									}else if(array[7]=="*"){
+										let starfruit = multiplication(kiwi, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${starfruit}`;
+										display.appendChild(answer);
+									}else if(array[7]=="/"){
+										if(kiwi ==0){
+											alert("Beep boop! You can't divide by zero!");
+										}else if(array[8]==0){
+											alert("Beep boop! You can't divide by zero!");
+										}else{
+											let starfruit = division(kiwi, array[8]);
+											let answer = document.createElement('h4');
+											answer.textContent = `Answer: ${cherry}`;
+											display.appendChild(answer);
+										}
+									}
+								}
+							}
 						}
 					}
-					//multiplication
-			}else if(array.length == 7){
-				if(array[1] == "*"){
-					if(array[3] =="*"){
-						if(array[5] =="*"){
-							let monkey = 
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-
-						}
-					}else if(array[3] == "/"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "+"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else{
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}
-					//division
-				}else if(array[1] == "/"){
-					if(array[3] =="*"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "/"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "+"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else{
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}
-					//addition
-				}else if(array[1] == "+"){
-					if(array[3] =="*"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "/"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "+"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else{
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}
-					//subtraction
 				}else if(array[1] == "-"){
-					if(array[3] =="*"){
-						if(array[5] =="*"){
+					let apple = subtraction(array[0], array[2]);
+					if(array[3]==undefined){
+						let answer = document.createElement('h4');
+						answer.textContent = `Answer: ${apple}`;
+						display.appendChild(answer);
+						//subtract add
+					}else if(array[3] =="+"){
+						let orange = addition(apple, array[4])
+						if(array[5]== undefined){
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${orange}`;
+							display.appendChild(answer);
+						}else if(array[5]=="+"){
+							if(array[7]== undefined){
+								//subtract add add
+							}else if(array[7]=="+"){
+								//subtract add add add
+							}else if(array[7]=="-"){
 
-						}else if(array[5] == "/"){
+							}else if(array[7]=="*"){
 
-						}else if(array[5] == "+"){
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5]=="-"){
+							if(array[7]== undefined){
+								//subtract add minus
+							}else if(array[7]=="+"){
+								//subtract add minus add
+							}else if(array[7]=="-"){
 
-						}else{
-							
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="*"){
+							if(array[7]== undefined){
+								//subtract add multiply
+							}else if(array[7]=="+"){
+								//subtract add multiply add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="/"){
+							if(array[7]== undefined){
+								//subtract add divide
+							}else if(array[7]=="+"){
+								//subtract add divide add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
 						}
-					}else if(array[3] == "/"){
-						if(array[5] =="*"){
+						//subtract subtract
+					}else if(array[3] =="-"){
+						let orange = subtraction(apple, array[4])
+						if(array[5]== undefined){
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${orange}`;
+							display.appendChild(answer);
+						}else if(array[5]=="+"){
+							if(array[7]== undefined){
+								//subtract subtract add
+							}else if(array[7]=="+"){
+								//subtract subtract add add
+							}else if(array[7]=="-"){
 
-						}else if(array[5] == "/"){
+							}else if(array[7]=="*"){
 
-						}else if(array[5] == "+"){
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5]=="-"){
+							if(array[7]== undefined){
+								//subtract subtract subtract
+							}else if(array[7]=="+"){
+								//subtract subtract subtract add
+							}else if(array[7]=="-"){
 
-						}else{
-							
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="*"){
+							if(array[7]== undefined){
+								//subtract subtract multiply
+							}else if(array[7]=="+"){
+								//subtract subtract multiply add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="/"){
+							if(array[7]== undefined){
+								//subtract subtract divide
+							}else if(array[7]=="+"){
+								//subtract subtract divide add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
 						}
-					}else if(array[3] == "+"){
-						if(array[5] =="*"){
+						//subtract multiply
+					}else if(array[3] =="*"){
+						let tomato = multiplication(array[2], array[4]);
+						let kumquat = subtraction(tomato, array[0]);
+						if(array[5]== undefined){
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${kumquat}`;
+							display.appendChild(answer);
+						}else if(array[5]=="+"){
+							if(array[7]== undefined){
+								//subtract multiply add
+							}else if(array[7]=="+"){
+								//subtract multiply add add
+							}else if(array[7]=="-"){
 
-						}else if(array[5] == "/"){
+							}else if(array[7]=="*"){
 
-						}else if(array[5] == "+"){
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5]=="-"){
+							if(array[7]== undefined){
+								//subtract multiply subtract
+							}else if(array[7]=="+"){
+								//subtract multiply subtract add
+							}else if(array[7]=="-"){
 
-						}else{
-							
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="*"){
+							if(array[7]== undefined){
+								//subtract multiply multiply
+							}else if(array[7]=="+"){
+								//subtract multiply multiply add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5] =="/"){
+							if(array[7]== undefined){
+								//subtract multiply divide
+							}else if(array[7]=="+"){
+								//subtract multiply divide add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
 						}
-					}else //if array[3]=="-"
-					{
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
+						//subtract divide
+					}else if(array[3]=="/"){
+						if(array[2]==0){
+							alert("Beep boop! You can't divide by zero!");
+						}else if(array[4]==0){
+							alert("Beep boop! You can't divide by zero!");
 						}else{
-							
+							let tomato = division(array[2], array[4]);
+							let kumquat = subtraction(array[0], tomato);
+							if(array[5]== undefined){
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kumquat}`;
+								display.appendChild(answer);
+							}else if(array[5]=="+"){
+								if(array[7]== undefined){
+									//subtract divide add
+								}else if(array[7]=="+"){
+									//subtract didivde add add
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}else if(array[5]=="-"){
+								if(array[7]== undefined){
+									//subtract divide subtract
+								}else if(array[7]=="+"){
+									//subtract divide subtract add
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+
+							}else if(array[5] =="*"){
+								if(array[7]== undefined){
+									//subtract divide multiply
+								}else if(array[7]=="+"){
+									//subtract divide multiply add
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+
+							}else if(array[5] =="/"){
+								if(array[7]== undefined){
+									//subtract divide divide
+								}else if(array[7]=="+"){
+									//subtract divide divive add
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}
+						}
+					}
+				}else if(array[1] =="*"){
+					let apple = multiplication(array[0], array[2]);
+					if(array[3]==undefined){
+						let answer = document.createElement('h4');
+						answer.textContent = `Answer: ${apple}`;
+						display.appendChild(answer);
+					}else if(array[3] =="+"){
+						let orange = addition(apple, array[4]);
+						if(array[5]== undefined){
+							//multiply add
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${orange}`;
+							display.appendChild(answer);
+						}else if(array[5]=="+"){
+							if(array[7]== undefined){
+								//multiply add add
+							}else if(array[7]=="+"){
+								//multiply add add add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5]=="-"){
+							if(array[7]== undefined){
+								//multiply add subtract
+							}else if(array[7]=="+"){
+								//multiply add subtract add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="*"){
+							if(array[7]== undefined){
+								//multiply add multiply
+							}else if(array[7]=="+"){
+								//multiply add multiply add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="/"){
+							if(array[7]== undefined){
+								//multiply add divide
+							}else if(array[7]=="+"){
+								//multiply add divide add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}
+						//multiply subtract
+					}else if(array[3] =="-"){
+						let orange = subtraction(apple, array[4])
+						if(array[5]== undefined){
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${orange}`;
+							display.appendChild(answer);
+						}else if(array[5]=="+"){
+							if(array[7]== undefined){
+								//multiply subtract add
+							}else if(array[7]=="+"){
+								//multiply subtract add add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5]=="-"){
+							if(array[7]== undefined){
+								//multiply subtract subtract
+							}else if(array[7]=="+"){
+								//multiply subtract subtract add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="*"){
+							if(array[7]== undefined){
+								//multiply subtract multiply
+							}else if(array[7]=="+"){
+								//multiply subtract multiply add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="/"){
+							if(array[7]== undefined){
+								//multiply subtradt divide
+							}else if(array[7]=="+"){
+								// multiply subtract divide add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}
+					}else if(array[3] =="*"){
+						let orange = multiply(apple, array[4]);
+						if(array[5]== undefined){
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${orange}`;
+							display.appendChild(answer);
+							//multiply multiply
+						}else if(array[5]=="+"){
+							if(array[7]== undefined){
+								//multiply multiply add
+							}else if(array[7]=="+"){
+								//multiply multiply add add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5]=="-"){
+							if(array[7]== undefined){
+								//multiply multiply subtract
+							}else if(array[7]=="+"){
+								//multiply multiply subtract add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="*"){
+							if(array[7]== undefined){
+								//multiply multiply multiply
+							}else if(array[7]=="+"){
+								//multiply multiply multiply add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}else if(array[5] =="/"){
+							if(array[7]== undefined){
+								//multiply multiply divive
+							}else if(array[7]=="+"){
+								//multiply multiply divide add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}
+						//multiply divide
+					}else if(array[3]=="/"){
+						if(apple==0){
+							alert("Beep boop! You can't divide by zero!");
+						}else if(array[4]==0){
+							alert("Beep boop! You can't divide by zero!");
+						}else{
+							let tomato = division(array[2], array[4]);
+							let kumquat = addition(array[0], tomato);
+							if(array[5]== undefined){
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kumquat}`;
+								display.appendChild(answer);
+							}else if(array[5]=="+"){
+								if(array[7]== undefined){
+									//multiply divide add
+								}else if(array[7]=="+"){
+									// multiply divide add add
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}else if(array[5]=="-"){
+								if(array[7]== undefined){
+									//multiply divide minus
+								}else if(array[7]=="+"){
+									//multiply divide minus add
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									
+								}
+
+							}else if(array[5] =="*"){
+								if(array[7]== undefined){
+									//multiply divide multiply
+								}else if(array[7]=="+"){
+									//multiply divide multiply add
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+
+							}else if(array[5] =="/"){
+								if(array[7]== undefined){
+									//multiply divide divive
+								}else if(array[7]=="+"){
+									//multiply dividie divivde add
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}
+						}
+					}
+				}else if(array[1] =="/"){
+					if (array[0] ==0) {
+						alert("Beep boop! You can't divide by zero!");
+					} else if(array[2] ==0) {
+						alert("Beep boop! You can't divide by zero!");
+					}else{
+						let apple = division(array[0], array[2]);
+						if(array[3]==undefined){
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${apple}`;
+							display.appendChild(answer);
+						}else if(array[3] =="+"){
+							let orange = addition(apple, array[4]);
+							if(array[5]== undefined){
+							//divide add
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${orange}`;
+								display.appendChild(answer);
+							}else if(array[5]=="+"){
+							let banana = addition(orange, array[6]);
+							if(array[7]== undefined){
+								//divide add add
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${banana}`;
+								display.appendChild(answer);
+							}else if(array[7]=="+"){
+								//divide add add add
+								let cherry = addition(banana, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${cherry}`;
+								display.appendChild(answer);
+							}else if(array[7]=="-"){
+								let cherry = subtraction(banana, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${cherry}`;
+								display.appendChild(answer);
+							}else if(array[7]=="*"){
+								let peach = multiplication(array[6], array[8]);
+								let kumquat = addition(orange, peach);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kumquat}`;
+								display.appendChild(answer);
+							}else if(array[7]=="/"){
+								if(array[6]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let peach = division(array[6], array[8]);
+									let kumquat = subtraction(orange, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5]=="-"){
+							let banana = subtraction(orange, array[6]);
+							if(array[7]== undefined){
+								//divide add subtract
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${banana}`;
+								display.appendChild(answer);
+							}else if(array[7]=="+"){
+								//divide add subtract add
+								let cherry = addition(banana, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${cherry}`;
+								display.appendChild(answer);
+							}else if(array[7]=="-"){
+								let cherry = subtraction(banana, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${cherry}`;
+								display.appendChild(answer);
+							}else if(array[7]=="*"){
+								let peach = multiplication(array[6], array[8]);
+								let kumquat = addition(orange, peach);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kumquat}`;
+								display.appendChild(answer);
+							}else if(array[7]=="/"){
+								if(array[6]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let peach = division(array[6], array[8]);
+									let kumquat = subtraction(orange, peach);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5] =="*"){
+							let banana = multiplication(orange, array[6]);
+							if(array[7]== undefined){
+								//divide add multiply
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${banana}`;
+								display.appendChild(answer);
+							}else if(array[7]=="+"){
+								//divide add multiply add
+								let cherry = addition(banana, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${cherry}`;
+								display.appendChild(answer);
+							}else if(array[7]=="-"){
+								let cherry = subtraction(banana, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${cherry}`;
+								display.appendChild(answer);
+							}else if(array[7]=="*"){
+								let cherry = multiplication(banana, array[8]);
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${kumquat}`;
+								display.appendChild(answer);
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+						}else if(array[5] =="/"){
+							if(orange == 0) {
+								alert("Beep boop! You can't divide by zero!");
+							}else if(array[6]==0){
+								alert("Beep boop! You can't divide by zero!");
+							}else{
+								let banana = division(orange, array[6]);
+								if(array[7]== undefined){
+									//divide add divide
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${banana}`;
+									display.appendChild(answer);
+								}else if(array[7]=="+"){
+									//divide add divide add
+									let cherry = addition(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="-"){
+									let cherry = subtraction(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}else if(array[7]=="*"){
+									let cherry = multiplication(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${kumquat}`;
+									display.appendChild(answer);
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}
+						}
+						//divide minus
+					}else if(array[3] =="-"){
+						let orange = subtraction(apple, array[4]);
+						if(array[5]== undefined){
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${orange}`;
+							display.appendChild(answer);
+						}else if(array[5]=="+"){
+							if(array[7]== undefined){
+								//divide minus add
+							}else if(array[7]=="+"){
+								//divide minus add add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								
+
+							}
+						}else if(array[5]=="-"){
+							if(array[7]== undefined){
+								//divide minus minus
+							}else if(array[7]=="+"){
+								//divide minus minus add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+
+							}
+
+						}else if(array[5] =="*"){
+							if(array[7]== undefined){
+								//divide minus multiply
+							}else if(array[7]=="+"){
+								//divide minus multiply add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+
+							}
+
+						}else if(array[5] =="/"){
+							if(array[7]== undefined){
+								//divide minus divide
+							}else if(array[7]=="+"){
+								//divide minus divide add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+
+							}
+
+						}
+						//divide multiply
+					}else if(array[3] =="*"){
+						let orange = multiplication(apple, array[4]);
+						if(array[5]== undefined){
+							let answer = document.createElement('h4');
+							answer.textContent = `Answer: ${orange}`;
+							display.appendChild(answer);
+							//divide multiply
+						}else if(array[5]=="+"){
+							if(array[7]== undefined){
+								//divide multiply add
+							}else if(array[7]=="+"){
+								//divide multiply add add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+
+							}
+						}else if(array[5]=="-"){
+							if(array[7]== undefined){
+								//divide multiply minus
+							}else if(array[7]=="+"){
+								//divide multiply minus add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+
+							}
+
+						}else if(array[5] =="*"){
+							if(array[7]== undefined){
+								//divide multiply multiply
+							}else if(array[7]=="+"){
+								//divide multiply multiply add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+
+							}
+
+						}else if(array[5] =="/"){
+							if(array[7]== undefined){
+								//divide multiply divide
+							}else if(array[7]=="+"){
+								//divide multiply divide add
+							}else if(array[7]=="-"){
+
+							}else if(array[7]=="*"){
+
+							}else if(array[7]=="/"){
+								if(banana ==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else if(array[8]==0){
+									alert("Beep boop! You can't divide by zero!");
+								}else{
+									let cherry = division(banana, array[8]);
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${cherry}`;
+									display.appendChild(answer);
+								}
+							}
+
+						}
+					}
+					//divide divide
+					else if(array[3]=="/"){
+						if(apple==0){
+							alert("Beep boop! You can't divide by zero!");
+						}else if(array[4]==0){
+							alert("Beep boop! You can't divide by zero!");
+						}else{
+							let orange = division(apple, array[4]);
+							if(array[5]== undefined){
+								let answer = document.createElement('h4');
+								answer.textContent = `Answer: ${orange}`;
+								display.appendChild(answer);
+							}else if(array[5]=="+"){
+								//divide divide plus
+								let banana = addition(orange, array[6]);
+								if(array[7]== undefined){
+									let answer = document.createElement('h4');
+									answer.textContent = `Answer: ${banana}`;
+									display.appendChild(answer);
+								}else if(array[7]=="+"){
+									//divide divive plus plus
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									
+								}
+							}else if(array[5]=="-"){
+								//divide divide minus
+								if(array[7]== undefined){
+									//divide divide minus plus
+								}else if(array[7]=="+"){
+
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(array[6]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let peach = division(array[6], array[8]);
+										let kumquat = subtraction(orange, peach);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${kumquat}`;
+										display.appendChild(answer);
+									}
+								}
+
+							}else if(array[5] =="*"){
+								//diide divide multiply
+								if(array[7]== undefined){
+									//divide divive multiply plus
+								}else if(array[7]=="+"){
+
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+
+							}else if(array[5] =="/"){
+								//divide divide divide
+								if(array[7]== undefined){
+									//divide divive divide plus
+								}else if(array[7]=="+"){
+
+								}else if(array[7]=="-"){
+
+								}else if(array[7]=="*"){
+
+								}else if(array[7]=="/"){
+									if(banana ==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else if(array[8]==0){
+										alert("Beep boop! You can't divide by zero!");
+									}else{
+										let cherry = division(banana, array[8]);
+										let answer = document.createElement('h4');
+										answer.textContent = `Answer: ${cherry}`;
+										display.appendChild(answer);
+									}
+								}
+							}
 						}
 					}
 				}
-				//max amount of numbers, not fully mapped out
-			}else if (array.length == 9){
-				if(array[1] == "*"){
-					if(array[3] =="*"){
-						if(array[5] =="*"){
-							if(array[7] =="*"){
 
-							}else if(array[7] == "/"){
-
-							}else if(array[7] == "+"){
-
-							}else{
-							
-							}
-						}else if(array[5] == "/"){
-							if(array[7] =="*"){
-
-							}else if(array[7] == "/"){
-
-							}else if(array[7] == "+"){
-
-							}else{
-							
-							}
-						}else if(array[5] == "+"){
-							if(array[7] =="*"){
-
-							}else if(array[7] == "/"){
-
-							}else if(array[7] == "+"){
-
-							}else{
-							
-							}
-						}else{
-							if(array[7] =="*"){
-
-							}else if(array[7] == "/"){
-
-							}else if(array[7] == "+"){
-
-							}else{
-							
-							}	
-						}
-					}else if(array[3] == "/"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "+"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else{
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}
-				}else if(array[1] == "/"){
-					if(array[3] =="*"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "/"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "+"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else{
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}
-				}else if(array[1] == "+"){
-					if(array[3] =="*"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}	
-					}else if(array[3] == "/"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "+"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else{
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}
-				}else{
-					if(array[3] =="*"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "/"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else if(array[3] == "+"){
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}else{
-						if(array[5] =="*"){
-
-						}else if(array[5] == "/"){
-
-						}else if(array[5] == "+"){
-
-						}else{
-							
-						}
-					}
 				}
-			}else{
-				alert("Beep boop! Please enter between two and five numbers. Press the clear button to start a new equation.")
+			}else if(array.length > 9){
+					alert("Beep boop! Please enter less than five numbers. Press 'Clear' to clear the screen and start again.");
+			}else if(array.length < 2){
+					alert("Beep boop! Please enter two or more numbers. Press 'Clear' to clear the screen and start again.");
 			}
 		}
+
 		const buttonOne = document.getElementById('one');
 		const buttonTwo = document.getElementById('two');
 		const buttontThree = document.getElementById('three');
@@ -656,6 +2008,7 @@
 			}
 
 		})
+
 	</script>
 </body>
 </html>
