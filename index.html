@@ -29,23 +29,24 @@
 	<script type="text/javascript">
 		
 		function addition(){
-			let sum = Number(arguments[0])+ Number(arguments[1]);
+			let sum = Number(Number(arguments[0])+ Number(arguments[1])).toFixed(2);
 			return sum;
 		}
 		function subtraction(){
-			let difference = arguments[0] - arguments[1];
+			let difference = Number(arguments[0] - arguments[1]).toFixed(2);
 			return difference
 		}
 		function multiplication(){
-			let product = arguments[0] * arguments[1];
+			let product = Number(arguments[0] * arguments[1]).toFixed(2);
 			return product;
 		}
 		function division(){
-			let quotient = arguments[0] / arguments[1];
+			let quotient = Number(arguments[0] / arguments[1]).toFixed(2);
 			return quotient
 		}
 		function operate(array){
 			if(array.length >=3 && array.length<=9){
+//ADDITION
 				if(array[1] =="+"){
 					let apple = addition(array[0], array[2]);
 					if(array[3] == undefined){
@@ -63,27 +64,30 @@
 								//add add add
 								let banana = addition(orange, array[6]);
 								if(array[7]==undefined){
-									//add add add add
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${banana}`;
 									display.appendChild(answer);
 								}else if(array[7]=="+"){
+									//add add add add
 									let cherry = addition(banana, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
 								}else if(array[7]=="-"){
+									//add add add subtract
 									let cherry = subtraction(banana, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
 								}else if(array[7]=="*"){
+									//add add add multiply
 									let peach = multiplication(array[6], array[8]);
 									let kumquat = addition(orange, peach);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${kumquat}`;
 									display.appendChild(answer);
 								}else if(array[7]=="/"){
+									//add add add divide
 									if(array[6] == 0){
 										alert("Beep boop! You can't divide by zero!");
 									}else if(array[8] ==0){
@@ -110,24 +114,27 @@
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
 								}else if(array[7]=="-"){
+									//add add subtract subtract
 									let cherry = subtraction(banana, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
 								}else if(array[7]=="*"){
+									//add add subtract multiply
 									let peach = multiplication(array[6], array[8]);
-									let kumquat = addition(orange, peach);
+									let kumquat = subtraction(orange, peach);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${kumquat}`;
 									display.appendChild(answer);
 								}else{
+									//add add add subtract divide
 									if(array[6] == 0){
 										alert("Beep boop! You can't divide by zero!");
 									}else if(array[8] ==0){
 										alert("Beep boop! You can't divide by zero!");
 									}else{
 										let peach = division(array[6], array[8]);
-										let kumquat = addition(orange,peach);
+										let kumquat = subtraction(orange, peach);
 										let answer = document.createElement('h4');
 										answer.textContent = `Answer: ${kumquat}`;
 										display.appendChild(answer);
@@ -147,25 +154,28 @@
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add add multiply subtract
 								}else if(array[7]=="-"){
 									let watermellon = subtraction(clementine, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${watermellon}`;
 									display.appendChild(answer);
+									//add add multiply multiply
 								}else if(array[7]=="*"){
-									let peach = multiplication(clementine, array[8]);
-									let kumquat = addition(apple, peach);
+									let plum = multiplication(tomato, array[8]);
+									let kumquat = addition(apple, plum);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${kumquat}`;
 									display.appendChild(answer);
 								}else{
-									if(clementine == 0){
+									//add add multiply divide
+									if(tomato == 0){
 										alert("Beep boop! You can't divide by zero!");
 									}else if(array[8] ==0){
 										alert("Beep boop! You can't divide by zero!");
 									}else{
-										let plum = division(clementine, array[8]);
-										let grape = addition(plum, orange);
+										let plum = division(tomato, array[8]);
+										let grape = addition(plum, apple);
 										let answer = document.createElement('h4');
 										answer.textContent = `Answer: ${grape}`;
 										display.appendChild(answer);
@@ -186,23 +196,26 @@
 									display.appendChild(answer);
 									//add add divide add
 								}else if(array[7]=="+"){
-									let cherry = addition(clementine, array[8]);
+									let watermellon = addition(clementine, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add add divide subtract
 								}else if(array[7]=="-"){
 									let watermellon = subtraction(clementine, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${watermellon}`;
 									display.appendChild(answer);
+									//add add divide multiply
 								}else if(array[7]=="*"){
-									let peach = multiplication(tomato, array[8]);
-									let kumquat = addition(apple, peach);
+									let plum = multiplication(tomato, array[8]);
+									let kumquat = addition(apple, plum);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${kumquat}`;
 									display.appendChild(answer);
 								}else{
-									if(array[6] == 0){
+									//add add divide divide
+									if(tomato == 0){
 										alert("Beep boop! You can't divide by zero!")
 									}else if(array[8] ==0){
 										alert("Beep boop! You can't divide by zero!")
@@ -224,29 +237,32 @@
 							answer.textContent = `Answer: ${orange}`;
 							display.appendChild(answer);
 							}else if(array[5] =="+"){
-								//add subtract add
 								let banana = addition(orange, array[6]);
 								if(array[7]==undefined){
-									//add subtract add add
+									//add subtract add 
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${banana}`;
 									display.appendChild(answer);
+									//add subtract add add
 								}else if(array[7]=="+"){
 									let cherry = addition(banana, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add subtract add minus
 								}else if(array[7]=="-"){
 									let cherry = subtraction(banana, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add subtract add multiply
 								}else if(array[7]=="*"){
 									let peach = multiplication(array[6], array[8]);
 									let kumquat = addition(orange, peach);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${kumquat}`;
 									display.appendChild(answer);
+									//add subtract add divide
 								}else if(array[7]=="/"){
 									if(array[6] == 0){
 										alert("Beep boop! You can't divide by zero!");
@@ -273,17 +289,20 @@
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add subtract subtract subtract
 								}else if(array[7]=="-"){
 									let cherry = subtraction(banana, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add subtract subtract multiply
 								}else if(array[7]=="*"){
 									let peach = multiplication(array[6], array[8]);
-									let kumquat = addition(orange, peach);
+									let kumquat = subtraction(orange, peach);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${kumquat}`;
 									display.appendChild(answer);
+									//add subtract subtract divide
 								}else{
 									if(array[6] == 0){
 										alert("Beep boop! You can't divide by zero!");
@@ -291,7 +310,7 @@
 										alert("Beep boop! You can't divide by zero!");
 									}else{
 										let peach = division(array[6], array[8]);
-										let kumquat = addition(orange,peach);
+										let kumquat = subtraction(orange,peach);
 										let answer = document.createElement('h4');
 										answer.textContent = `Answer: ${kumquat}`;
 										display.appendChild(answer);
@@ -305,31 +324,34 @@
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${clementine}`;
 									display.appendChild(answer);
-									//add add multiply add
+									//add subtract multiply add
 								}else if(array[7]=="+"){
-									let cherry = addition(clementine, array[8]);
+									let watermellon = addition(clementine, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add subtract multiply subtract
 								}else if(array[7]=="-"){
 									let watermellon = subtraction(clementine, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${watermellon}`;
 									display.appendChild(answer);
+									//add subtract multiply multiply
 								}else if(array[7]=="*"){
-									let peach = multiplication(clementine, array[8]);
-									let kumquat = addition(apple, peach);
+									let watermellon = multiplication(tomato, array[8]);
+									let kumquat = subtraction(apple, watermellon);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${kumquat}`;
 									display.appendChild(answer);
+									//add subtract multiply divide
 								}else{
-									if(clementine == 0){
+									if(tomato == 0){
 										alert("Beep boop! You can't divide by zero!");
 									}else if(array[8] ==0){
 										alert("Beep boop! You can't divide by zero!");
 									}else{
-										let plum = division(clementine, array[8]);
-										let grape = addition(plum, orange);
+										let plum = division(tomato, array[8]);
+										let grape = addition(plum, apple);
 										let answer = document.createElement('h4');
 										answer.textContent = `Answer: ${grape}`;
 										display.appendChild(answer);
@@ -350,21 +372,23 @@
 									display.appendChild(answer);
 									//add subtract divide add
 								}else if(array[7]=="+"){
-									let cherry = addition(clementine, array[8]);
+									let watermellon = addition(clementine, array[8]);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add subtract divide add
 								}else if(array[7]=="-"){
 									let watermellon = subtraction(clementine, array[8]);
 									let answer = document.createElement('h4');
-									answer.textContent = `Answer: ${watermellon}`;
+									answer.textContent = `Answer: ${cherry}`;
 									display.appendChild(answer);
+									//add subtract divide multiply
 								}else if(array[7]=="*"){
-									let peach = multiplication(tomato, array[8]);
-									let kumquat = addition(apple, peach);
+									let watermellon = multiplication(tomato, array[8]);
+									let kumquat = subtraction(apple, watermellon);
 									let answer = document.createElement('h4');
 									answer.textContent = `Answer: ${kumquat}`;
-									display.appendChild(answer);
+									display.appendChild(answer);									//add subtract divide multiply
 								}else{
 									if(array[6] == 0){
 										alert("Beep boop! You can't divide by zero!")
@@ -380,6 +404,7 @@
 								}
 							}
 						}
+// !!! JULY 30 BEGIN HERE !!!
 					}else if(array[3] =="*"){
 						let pluot = multiplication(array[2], array[4]);
 						if(array[5]== undefined){
@@ -559,8 +584,8 @@
 						}else if(array[4]==0){
 							alert("Beep boop! You can't divide by zero!");
 						}else{
-							let tomato = division(array[2], array[4]);
-							let mango = addition(array[0], tomato);
+							let pluot = division(array[2], array[4]);
+							let mango = addition(array[0], pluot);
 							if(array[5]== undefined){
 								let answer = document.createElement('h4');
 								answer.textContent = `Answer: ${mango}`;
@@ -714,6 +739,7 @@
 							}
 						}
 					}
+// SUBTRACTION 
 				}else if(array[1] == "-"){
 					let apple = subtraction(array[0], array[2]);
 					if(array[3]==undefined){
@@ -912,8 +938,8 @@
 						}
 						//subtract multiply
 					}else if(array[3] =="*"){
-						let tomato = multiplication(array[2], array[4]);
-						let kumquat = subtraction(tomato, array[0]);
+						let pluot = multiplication(array[2], array[4]);
+						let kumquat = subtraction(pluot, array[0]);
 						if(array[5]== undefined){
 							let answer = document.createElement('h4');
 							answer.textContent = `Answer: ${kumquat}`;
@@ -1011,8 +1037,8 @@
 						}else if(array[4]==0){
 							alert("Beep boop! You can't divide by zero!");
 						}else{
-							let tomato = division(array[2], array[4]);
-							let kumquat = subtraction(array[0], tomato);
+							let pluot = division(array[2], array[4]);
+							let kumquat = subtraction(array[0], pluot);
 							if(array[5]== undefined){
 								let answer = document.createElement('h4');
 								answer.textContent = `Answer: ${kumquat}`;
@@ -1106,6 +1132,7 @@
 							}
 						}
 					}
+// MULTIPLICATION
 				}else if(array[1] =="*"){
 					let apple = multiplication(array[0], array[2]);
 					if(array[3]==undefined){
@@ -1404,8 +1431,8 @@
 						}else if(array[4]==0){
 							alert("Beep boop! You can't divide by zero!");
 						}else{
-							let tomato = division(array[2], array[4]);
-							let kumquat = addition(array[0], tomato);
+							let pluot = division(array[2], array[4]);
+							let kumquat = addition(array[0], pluot);
 							if(array[5]== undefined){
 								let answer = document.createElement('h4');
 								answer.textContent = `Answer: ${kumquat}`;
@@ -1490,6 +1517,7 @@
 							}
 						}
 					}
+//DIVISION
 				}else if(array[1] =="/"){
 					if (array[0] ==0) {
 						alert("Beep boop! You can't divide by zero!");
