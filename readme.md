@@ -1,0 +1,3 @@
+Hooo boy! Well here it is, the calculator project that signifies the end of the JavaScript 101 course! I'm proud of myself for completing it, and I learned a lot about the DOM and various things JavaScript can do through this project. I also learned I need to psuedocode after I read the promt at least twice, that I need to get better at remembering to use git, and that I need to take breaks when I code. 
+
+This calculator is super basic (hense the 90s styling). It doesn't really do pemdas, but it will stack your equations. Give it a whirl, it's pretty rad.
