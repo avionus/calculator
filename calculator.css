@@ -1,9 +1,66 @@
+body{
+	background: url(90sbackground.jpg);
+	font-family: "Comic Sans MS";
+}
 p{
 	display: inline;
 }
-
-#display {
-	border: 2px solid black;
-	padding: 10px;
-	width: 200px;
+h1{
+	font-size: 50px;
+	text-align: center;
+	color: yellow;
 }
+#header{
+	width: 650px;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: 0px;
+}
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, #addition, #subtraction, #multiplication, #division, #clear, #equals{
+	height: 75px;
+	width: 75px;
+	background: url(buttonbackground.jpg);
+	margin: 1%;
+	font-size: 35px;
+	border-radius: 5px;
+	font-family: "Comic Sans MS";
+	color: yellow;
+	box-shadow: 3px 3px black;
+}
+#buttons{
+	padding-top: 3%;
+	padding-left: 20%;
+
+}
+#display {
+	border: 1px solid black;
+	padding: 10px;
+	width: 400px;
+	height: 50px;
+	background: #ededed;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	font-size: 25px;
+	margin-top: 5%;
+	border-radius: 5px;
+}
+#calculator{
+	border: 2px solid gray;
+	width: 600px;
+	height: 550px;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	background: url(calcbackground.jpg);
+	box-shadow: 5px 5px 10px lightgray;
+
+}
+#brand{
+	width: 100px;
+	height: 50px;
+	margin-left: 25%;
+	padding-top: 5%;

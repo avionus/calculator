@@ -4,29 +4,34 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="calculator.css">
 </head>
-<h1> Calculator </h1>
-	<div id="display">
-		<div id="numberScreen"></div>
-		<div id="answers">
+	<div id="wholething">
+		<img id="header" src="myfirstcalculator.gif">
+			<div id="calculator">
+			<div id="display">
+				<div id="numberScreen"></div>
+				<div id="answers">
+				</div>
+			</div>
+			<div id="buttons">
+				<button id="seven"> 7 </button>
+				<button id="eight"> 8 </button>
+				<button id="nine"> 9 </button> 
+				<button id="addition"> + </button> <br>
+				<button id="four"> 4 </button>
+				<button id="five"> 5 </button>
+				<button id="six"> 6 </button> 
+				<button id="subtraction"> - </button><br>
+				<button id="one"> 1 </button>
+				<button id="two"> 2 </button>
+				<button id="three"> 3 </button>
+				<button id="multiplication"> x </button><br>
+				<button id="clear"> C </button>
+				<button id="zero"> 0 </button>
+				<button id="equals"> = </button>
+				<button id="division"> ÷ </button><br>
+				<img id ="brand" src="brand.gif">
+			</div>
 		</div>
-	</div>
-	<div id="buttons">
-		<button id="seven"> 7 </button>
-		<button id="eight"> 8 </button>
-		<button id="nine"> 9 </button> 
-		<button id="addition"> + </button> <br>
-		<button id="four"> 4 </button>
-		<button id="five"> 5 </button>
-		<button id="six"> 6 </button> 
-		<button id="subtraction"> - </button><br>
-		<button id="one"> 1 </button>
-		<button id="two"> 2 </button>
-		<button id="three"> 3 </button>
-		<button id="multiplication"> x </button><br>
-		<button id="clear"> Clear </button>
-		<button id="zero"> 0 </button>
-		<button id="equals"> = </button>
-		<button id="division"> ÷ </button><br>
 	</div>
 <body>
 	<script type="text/javascript">
@@ -71,139 +76,424 @@
 		var firstPart
 		var operator
 		var secondPart 
+		var secondArray = [];
 //number buttons
 		buttonOne.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "1"
-			numberScreen.appendChild(x);
-			firstArray.push(1);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "1"
+				numberScreen.appendChild(x);
+				secondArray.push(1);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "1"
+				numberScreen.appendChild(x);
+				firstArray.push(1);
+			}
 			
 		})
 		buttonTwo.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "2"
-			numberScreen.appendChild(x);
-			firstArray.push(2);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "2"
+				numberScreen.appendChild(x);
+				secondArray.push(2);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "2"
+				numberScreen.appendChild(x);
+				firstArray.push(2);
+			}
 		})
 		buttonThree.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "3"
-			numberScreen.appendChild(x);
-			firstArray.push(3);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "3"
+				numberScreen.appendChild(x);
+				secondArray.push(3);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "3"
+				numberScreen.appendChild(x);
+				firstArray.push(3);
+			}
 		})
 		buttonFour.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "4"
-			numberScreen.appendChild(x);
-			firstArray.push(4);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "4"
+				numberScreen.appendChild(x);
+				secondArray.push(4);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "4"
+				numberScreen.appendChild(x);
+				firstArray.push(4);
+			}
 		})
 		buttonFive.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "5"
-			numberScreen.appendChild(x);
-			firstArray.push(5);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "5"
+				numberScreen.appendChild(x);
+				secondArray.push(5);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "5"
+				numberScreen.appendChild(x);
+				firstArray.push(5);
+			}
 		})
 		buttonSix.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "6"
-			numberScreen.appendChild(x);
-			firstArray.push(6);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "6"
+				numberScreen.appendChild(x);
+				secondArray.push(6);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "6"
+				numberScreen.appendChild(x);
+				firstArray.push(6);
+			}
 		})
 		buttonSeven.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "7"
-			numberScreen.appendChild(x);
-			firstArray.push(7);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "7"
+				numberScreen.appendChild(x);
+				secondArray.push(7);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "7"
+				numberScreen.appendChild(x);
+				firstArray.push(7);
+			}
 		})
 		buttonEight.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "8"
-			numberScreen.appendChild(x);
-			firstArray.push(8);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "8"
+				numberScreen.appendChild(x);
+				secondArray.push(8);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "8"
+				numberScreen.appendChild(x);
+				firstArray.push(8);
+			}
 		})
 		buttonNine.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "9"
-			numberScreen.appendChild(x);
-			firstArray.push(9);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "9"
+				numberScreen.appendChild(x);
+				secondArray.push(9);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "9"
+				numberScreen.appendChild(x);
+				firstArray.push(9);
+			}
 		})
 		buttonZero.addEventListener('click', ()=>{
-			let x = document.createElement('p');
-			x.textContent = "0"
-			numberScreen.appendChild(x);
-			firstArray.push(0);
+			if (operator != undefined){
+				let x = document.createElement('p');
+				x.textContent = "0"
+				numberScreen.appendChild(x);
+				secondArray.push(0);
+				var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					nodeList[0].innerText = ""
+				}
+			}else{
+				let x = document.createElement('p');
+				x.textContent = "0"
+				numberScreen.appendChild(x);
+				firstArray.push(0);
+			}
 		})
 		
 //operator buttons
 		buttonAddition.addEventListener('click', ()=>{
+			var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					for (var i = 0; i < nodeList.length; i++) {
+						if(nodeList.innerText != ""){
+							let z = numberScreen.firstChild;
+							numberScreen.removeChild(z)
+						}
+					}
+				}
+			firstPart = firstArray.join('');
+			if(secondArray.length >0){
+				secondPart = secondArray.join('');
+				console.log(firstPart)
+				if (operator == "-"){
+					firstArray=[]
+					firstArray.push(subtraction(firstPart, secondPart));
+					secondArray=[]
+				}else if(operator=="*"){
+					firstArray=[]
+					firstArray.push(multiplication(firstPart, secondPart));
+					secondArray=[]
+				}else if(operator=="/"){
+					if(firstPart == 0){
+						display.removeChild(numberScreen);
+						let y = document.createElement('p');
+						y.textContent = `Sorry, but you can't divide by zero!`
+						display.appendChild(y);
+					}else if(secondPart == 0){
+						display.removeChild(numberScreen);
+						let y = document.createElement('p');
+						y.textContent = `Sorry, but you can't divide by zero!`
+						display.appendChild(y);
+					}else{
+						firstArray=[]
+						firstArray.push(division(firstPart, secondPart));
+						secondArray=[]
+					}
+				}else{
+					firstArray=[]
+					firstArray.push(addition(firstPart, secondPart));
+					secondArray=[]
+				}
+			}
+			operator = "+";
+			console.log(firstArray);
 			let x = document.createElement('p');
 			x.textContent = "+"
 			numberScreen.appendChild(x);
-			firstPart = firstArray.join('')
-			operator = "+";
-			firstArray =[];
-			console.log(firstPart);
+
 		})
+
+			
 		buttonSubtraction.addEventListener('click', ()=>{
+			var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					for (var i = 0; i < nodeList.length; i++) {
+						if(nodeList.innerText != ""){
+							let z = numberScreen.firstChild;
+							numberScreen.removeChild(z)
+						}
+					}
+				}
+			firstPart = firstArray.join('');
+			if(secondArray.length >0){
+				secondPart = secondArray.join('');
+				console.log(operator)
+				if (operator == "-"){
+					firstArray=[]
+					firstArray.push(subtraction(firstPart, secondPart));
+					secondArray=[]
+				}else if(operator=="*"){
+					firstArray=[]
+					firstArray.push(multiplication(firstPart, secondPart));
+					secondArray=[]
+				}else if(operator=="/"){
+					if(firstPart == 0){
+						display.removeChild(numberScreen);
+						let y = document.createElement('p');
+						y.textContent = `Sorry, but you can't divide by zero!`
+						display.appendChild(y);
+					}else if(secondPart == 0){
+						display.removeChild(numberScreen);
+						let y = document.createElement('p');
+						y.textContent = `Sorry, but you can't divide by zero!`
+						display.appendChild(y);
+					}else{
+						firstArray=[]
+						firstArray.push(division(firstPart, secondPart));
+						secondArray=[]
+					}
+				}else{
+					firstArray=[]
+					firstArray.push(addition(firstPart, secondPart));
+					secondArray=[]
+				}
+			}
+
+			operator = "-";
+			console.log(firstArray);
 			let x = document.createElement('p');
 			x.textContent = "-"
 			numberScreen.appendChild(x);
-			firstPart = firstArray.join('')
-			operator = "-";
-			firstArray =[]
-			console.log(firstPart)
+
 		})
 		buttonMultiplication.addEventListener('click', ()=>{
+			var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					for (var i = 0; i < nodeList.length; i++) {
+						if(nodeList.innerText != ""){
+							let z = numberScreen.firstChild;
+							numberScreen.removeChild(z)
+						}
+					}
+				}
+			firstPart = firstArray.join('');
+			if(secondArray.length >0){
+				secondPart = secondArray.join('');
+				console.log(firstPart)
+				if (operator == "-"){
+					firstArray=[]
+					firstArray.push(subtraction(firstPart, secondPart));
+					secondArray=[]
+				}else if(operator=="*"){
+					firstArray=[]
+					firstArray.push(multiplication(firstPart, secondPart));
+					secondArray=[]
+				}else if(operator=="/"){
+					if(firstPart == 0){
+						display.removeChild(numberScreen);
+						let y = document.createElement('p');
+						y.textContent = `Sorry, but you can't divide by zero!`
+						display.appendChild(y);
+					}else if(secondPart == 0){
+						display.removeChild(numberScreen);
+						let y = document.createElement('p');
+						y.textContent = `Sorry, but you can't divide by zero!`
+						display.appendChild(y);
+					}else{
+						firstArray=[]
+						firstArray.push(division(firstPart, secondPart));
+						secondArray=[]
+					}
+				}else{
+					firstArray=[]
+					firstArray.push(addition(firstPart, secondPart));
+					secondArray=[]
+				}
+			}
+			operator = "*";
+			console.log(firstArray);
 			let x = document.createElement('p');
 			x.textContent = "*"
 			numberScreen.appendChild(x);
-			firstPart = firstArray.join('')
-			operator = "*";
-			firstArray =[]
-			console.log(firstPart)
+
 		})
 		buttonDivision.addEventListener('click', ()=>{
+			var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					for (var i = 0; i < nodeList.length; i++) {
+						if(nodeList.innerText != ""){
+							let z = numberScreen.firstChild;
+							numberScreen.removeChild(z)
+						}
+					}
+				}
+			firstPart = firstArray.join('');
+			if(secondArray.length >0){
+				secondPart = secondArray.join('');
+				console.log(firstPart)
+				if (operator == "-"){
+					firstArray=[]
+					firstArray.push(subtraction(firstPart, secondPart));
+					secondArray=[]
+				}else if(operator=="*"){
+					firstArray=[]
+					firstArray.push(multiplication(firstPart, secondPart));
+					secondArray=[]
+				}else if(operator=="/"){
+					if(firstPart == 0){
+						display.removeChild(numberScreen);
+						let y = document.createElement('p');
+						y.textContent = `Sorry, but you can't divide by zero!`
+						display.appendChild(y);
+					}else if(secondPart == 0){
+						display.removeChild(numberScreen);
+						let y = document.createElement('p');
+						y.textContent = `Sorry, but you can't divide by zero!`
+						display.appendChild(y);
+					}else{
+						firstArray=[]
+						firstArray.push(division(firstPart, secondPart));
+						secondArray=[]
+					}
+				}else{
+					firstArray=[]
+					firstArray.push(addition(firstPart, secondPart));
+					secondArray=[]
+				}
+			}
+			operator = "/";
+			console.log(firstArray);
 			let x = document.createElement('p');
 			x.textContent = "/"
 			numberScreen.appendChild(x);
-			firstPart = firstArray.join('')
-			operator = "/";
-			firstArray =[]
-			console.log(firstPart)
+
 		})
 		equals.addEventListener('click', ()=> {
-			secondPart = firstArray.join('');
+			var nodeList = numberScreen.querySelectorAll('p');
+				if (nodeList.length >= 1){
+					for (var i = 0; i < nodeList.length; i++) {
+						if(nodeList.innerText != ""){
+							let z = numberScreen.firstChild;
+							numberScreen.removeChild(z)
+						}
+					}
+				}
+			secondPart = secondArray.join('');
 			if(operator =="+"){			
-				var sum = addition(firstPart, secondPart);
+				var sum = addition(Number(firstArray.join('')), secondPart);
 				let y = document.createElement('p');
-				y.textContent = `Answer${sum};`
+				y.textContent = `The answer is: ${sum}!`
 				answers.appendChild(y);
-				firstArray =[]
-				firstArray.push(sum);
 				var nodeList = answers.querySelectorAll('p');
 				if (nodeList.length >= 1){
 					let z = answers.firstChild;
 					answers.removeChild(z)
 				}
 			}else if(operator =="-"){
-				var difference = subtraction(firstPart, secondPart);
+				var difference = subtraction(Number(firstArray.join('')), secondPart);
 				let y = document.createElement('p');
-				y.textContent = `Answer${difference};`
-				display.appendChild(y);
-				firstArray =[]
-				firstArray.push(difference);
+				y.textContent = `The answer is: ${difference}!`
+				answers.appendChild(y);
 				var nodeList = answers.querySelectorAll('p');
 				if (nodeList.length >= 1){
 					let z = answers.firstChild;
 					answers.removeChild(z)
 				}
 			}else if(operator =="*"){
-				var product = multiplication(firstPart, secondPart);
+				var difference = multiplication(Number(firstArray.join('')), secondPart);
 				let y = document.createElement('p');
-				y.textContent = `Answer${product};`
+				y.textContent = `The answer is: ${difference}!`
 				answers.appendChild(y);
-				firstArray =[]
-				firstArray.push(product);
 				var nodeList = answers.querySelectorAll('p');
 				if (nodeList.length >= 1){
 					let z = answers.firstChild;
@@ -213,20 +503,18 @@
 				if(firstPart=="0" || firstPart == 0.0){
 					display.removeChild(numberScreen);
 					let y = document.createElement('p');
-					y.textContent = `Can't divide by zero!`
+					y.textContent = `Sorry, but you can't divide by zero!`
 					display.appendChild(y);
 				} else if(secondPart =="0"){
 					display.removeChild(numberScreen);
 					let y = document.createElement('p');
-					y.textContent = `Can't divide by zero!`
+					y.textContent = `Sorry, but you can't divide by zero!`
 					display.appendChild(y);
 				}else{
-					var quotient = division(firstPart, secondPart);
+					var difference = division(Number(firstArray.join('')), secondPart);
 					let y = document.createElement('p');
-					y.textContent = `Answer${quotient};`
+					y.textContent = `The answer is: ${difference}!`
 					answers.appendChild(y);
-					firstArray =[]
-					firstArray.push(quotient);
 					var nodeList = answers.querySelectorAll('p');
 					if (nodeList.length >= 1){
 						let z = answers.firstChild;
@@ -252,6 +540,7 @@
 			firstPart =""
 			secondPart=""
 			firstArray=[]
+			secondArray=[]
 		})
 	</script>
 </body>
